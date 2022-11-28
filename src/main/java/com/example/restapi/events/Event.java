@@ -2,6 +2,7 @@ package com.example.restapi.events;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Builder
@@ -14,8 +15,11 @@ import java.time.LocalDateTime;
   Equals Entity 간에 연관관계가 있을 경우(상호 참조)를 구현한 코드와 HashCode 를 구현한 코드에서 Stack OverFlow 현상이 발생할 수 있다.
  */
 @EqualsAndHashCode(of = "id")
+@Entity
 public class Event {
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private String description;
@@ -29,6 +33,7 @@ public class Event {
     private int limitOfEnrollment;
     private boolean offline;
     private boolean free;
+    @Enumerated(EnumType.STRING)
     private EventStatus eventStatus;
 
 }
