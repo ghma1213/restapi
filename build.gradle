@@ -35,6 +35,9 @@ dependencies {
     testRuntimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation group: 'pl.pragmatists', name: 'JUnitParams', version: '1.1.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.8.2'
+
 }
 
 tasks.named('test') {
